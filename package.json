@@ -1,0 +1,50 @@
+{
+  "name": "typescript-seed",
+  "version": "0.0.1",
+  "description": "A basic start pack for TypeScript projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp clean && gulp build-all",
+    "watch": "gulp clean && bnr watch",
+    "debug": "npm run build && bnr debug",
+    "do-publish": "npm run buid && npm publish"
+  },
+  "betterScripts": {
+    "debug": {
+      "command": "node ./index.js",
+      "env": {
+        "DEBUG": "*"
+      }
+    },
+    "watch": {
+      "command": "concurrently \"gulp watch\" \"nodemon ./dist/index.js\" -n \"GULP,NODE\"",
+      "env": {
+        "DEBUG": "*"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrinkerVII/typescript-seed.git"
+  },
+  "author": "BrinkerVII <brinkervii@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrinkerVII/typescript-seed/issues"
+  },
+  "homepage": "https://github.com/BrinkerVII/typescript-seed#readme",
+  "devDependencies": {
+    "@types/debug": "0.0.30",
+    "@types/node": "^8.0.51",
+    "better-npm-run": "^0.1.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-typescript": "^3.2.3",
+    "typescript": "^2.6.1"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "node": "^8.3.0"
+  }
+}
